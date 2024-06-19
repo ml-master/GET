@@ -1,0 +1,42 @@
+============= FOLD 3 ========================
+{
+  "article_src_emb_size": 128,
+  "batch_size": 32,
+  "claim_src_emb_size": 128,
+  "cuda": 1,
+  "dataset": "PolitiFact",
+  "debug": 1,
+  "decay_step": 100,
+  "decay_weight": 0.0001,
+  "dropout_left": 0.2,
+  "dropout_right": 0.2,
+  "early_stopping": 10,
+  "epochs": 100,
+  "fixed_length_left": 30,
+  "fixed_length_left_src_chars": 20,
+  "fixed_length_right": 100,
+  "fixed_length_right_src_chars": 20,
+  "fixed_num_evidences": 30,
+  "gnn_dropout": 0.2,
+  "gnn_window_size": 3,
+  "gsl_rate": 0.6,
+  "hidden_size": 300,
+  "log": "logs/get",
+  "loss_type": "cross_entropy",
+  "lr": 0.0001,
+  "num_att_heads_for_evds": 1,
+  "num_att_heads_for_words": 3,
+  "num_classes": 2,
+  "num_folds": 5,
+  "optimizer": "adam",
+  "path": "formatted_data/declare/",
+  "secondary_log_folder": "logs/get/log_results_PolitiFact",
+  "seed": 123456,
+  "use_article_source": 1,
+  "use_claim_source": 1,
+  "verbose": 1,
+  "word_embedding_size": 300
+}
+Setting seed to 123456
+Min query length, 24 Min doc length 100
+Max query length, 25 Max doc length 100

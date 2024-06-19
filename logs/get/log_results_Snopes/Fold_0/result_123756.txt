@@ -1,0 +1,105 @@
+============= FOLD 0 ========================
+{
+  "article_src_emb_size": 128,
+  "batch_size": 32,
+  "claim_src_emb_size": 128,
+  "cuda": 1,
+  "dataset": "Snopes",
+  "debug": 1,
+  "decay_step": 100,
+  "decay_weight": 0.0001,
+  "dropout_left": 0.2,
+  "dropout_right": 0.2,
+  "early_stopping": 10,
+  "epochs": 100,
+  "fixed_length_left": 30,
+  "fixed_length_left_src_chars": 20,
+  "fixed_length_right": 100,
+  "fixed_length_right_src_chars": 20,
+  "fixed_num_evidences": 30,
+  "gnn_dropout": 0.2,
+  "gnn_window_size": 3,
+  "gsl_rate": 0.6,
+  "hidden_size": 300,
+  "log": "logs/get",
+  "loss_type": "cross_entropy",
+  "lr": 0.0001,
+  "num_att_heads_for_evds": 2,
+  "num_att_heads_for_words": 5,
+  "num_classes": 2,
+  "num_folds": 5,
+  "optimizer": "adam",
+  "path": "formatted_data/declare/",
+  "secondary_log_folder": "logs/get/log_results_Snopes",
+  "seed": 123756,
+  "use_article_source": 1,
+  "use_claim_source": 0,
+  "verbose": 1,
+  "word_embedding_size": 300
+}
+Setting seed to 123756
+Min query length, 22 Min doc length 100
+Max query length, 28 Max doc length 100
+Converting DataFrame to Normal Dictionary of Data
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+Converting DataFrame to Normal Dictionary of Data
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+Converting DataFrame to Normal Dictionary of Data
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+done extracting
+loading data time: 256 (seconds)
+Building model
+Word hit: (49879, 49881) 99.99599045728834
+Fitting Model
+Using: <function cross_entroy at 0x7fc5a38a48c0>
+|Epoch 000 | Train time: 22.7(s) | Train loss: 54.667| Val F1_macro = 0.479 | Vad AUC = 0.738| Val F1_micro = 0.739 | Validation time: 17.2(s)
+|Epoch 001 | Train time: 19.3(s) | Train loss: 45.493| Val F1_macro = 0.571 | Vad AUC = 0.795| Val F1_micro = 0.741 | Validation time: 16.1(s)
+|Epoch 002 | Train time: 18.3(s) | Train loss: 40.265| Val F1_macro = 0.697 | Vad AUC = 0.817| Val F1_micro = 0.771 | Validation time: 16.5(s)
+|Epoch 003 | Train time: 19.0(s) | Train loss: 38.868| Val F1_macro = 0.656 | Vad AUC = 0.824| Val F1_micro = 0.767 | Validation time: 15.1(s)
+|Epoch 004 | Train time: 19.6(s) | Train loss: 33.661| Val F1_macro = 0.743 | Vad AUC = 0.866| Val F1_micro = 0.822 | Validation time: 15.8(s)
+|Epoch 005 | Test F1_macro = 0.78348 | Testing time: 30.2(s)
+|Epoch 005 | Train time: 18.3(s) | Train loss: 30.113| Val F1_macro = 0.752 | Vad AUC = 0.872| Val F1_micro = 0.820 | Validation time: 11.9(s)
+|Epoch 006 | Train time: 18.2(s) | Train loss: 28.181| Val F1_macro = 0.750 | Vad AUC = 0.876| Val F1_micro = 0.820 | Validation time: 15.3(s)
+|Epoch 007 | Train time: 18.9(s) | Train loss: 25.667| Val F1_macro = 0.749 | Vad AUC = 0.874| Val F1_micro = 0.808 | Validation time: 16.3(s)
+|Epoch 008 | Train time: 18.7(s) | Train loss: 25.528| Val F1_macro = 0.740 | Vad AUC = 0.877| Val F1_micro = 0.824 | Validation time: 16.6(s)
+|Epoch 009 | Train time: 20.2(s) | Train loss: 25.247| Val F1_macro = 0.742 | Vad AUC = 0.873| Val F1_micro = 0.818 | Validation time: 14.6(s)
+|Epoch 010 | Test F1_macro = 0.81423 | Testing time: 28.1(s)
+|Epoch 010 | Train time: 19.2(s) | Train loss: 22.399| Val F1_macro = 0.796 | Vad AUC = 0.885| Val F1_micro = 0.834 | Validation time: 16.1(s)
+|Epoch 011 | Train time: 17.7(s) | Train loss: 20.673| Val F1_macro = 0.764 | Vad AUC = 0.885| Val F1_micro = 0.831 | Validation time: 16.4(s)
+|Epoch 012 | Train time: 16.9(s) | Train loss: 19.277| Val F1_macro = 0.768 | Vad AUC = 0.887| Val F1_micro = 0.824 | Validation time: 13.2(s)
+|Epoch 013 | Train time: 18.7(s) | Train loss: 16.181| Val F1_macro = 0.745 | Vad AUC = 0.883| Val F1_micro = 0.822 | Validation time: 15.2(s)
+|Epoch 014 | Train time: 18.6(s) | Train loss: 15.059| Val F1_macro = 0.755 | Vad AUC = 0.879| Val F1_micro = 0.834 | Validation time: 13.2(s)
+|Epoch 015 | Test F1_macro = 0.80871 | Testing time: 26.8(s)
+|Epoch 015 | Train time: 18.2(s) | Train loss: 13.885| Val F1_macro = 0.785 | Vad AUC = 0.879| Val F1_micro = 0.831 | Validation time: 15.2(s)
+|Epoch 016 | Train time: 17.4(s) | Train loss: 12.464| Val F1_macro = 0.803 | Vad AUC = 0.883| Val F1_micro = 0.843 | Validation time: 15.8(s)
+|Epoch 017 | Train time: 17.5(s) | Train loss: 10.764| Val F1_macro = 0.766 | Vad AUC = 0.881| Val F1_micro = 0.818 | Validation time: 15.0(s)
+|Epoch 018 | Train time: 20.2(s) | Train loss: 9.663| Val F1_macro = 0.752 | Vad AUC = 0.886| Val F1_micro = 0.822 | Validation time: 17.4(s)
+|Epoch 019 | Train time: 20.8(s) | Train loss: 9.405| Val F1_macro = 0.771 | Vad AUC = 0.883| Val F1_micro = 0.827 | Validation time: 15.6(s)
+|Epoch 020 | Test F1_macro = 0.79154 | Testing time: 27.5(s)
+|Epoch 020 | Train time: 17.9(s) | Train loss: 7.501| Val F1_macro = 0.783 | Vad AUC = 0.885| Val F1_micro = 0.836 | Validation time: 15.3(s)
+|Epoch 021 | Train time: 20.4(s) | Train loss: 7.489| Val F1_macro = 0.797 | Vad AUC = 0.881| Val F1_micro = 0.841 | Validation time: 14.8(s)
+|Epoch 022 | Train time: 21.0(s) | Train loss: 6.579| Val F1_macro = 0.806 | Vad AUC = 0.889| Val F1_micro = 0.841 | Validation time: 18.8(s)
+|Epoch 023 | Train time: 15.2(s) | Train loss: 5.090| Val F1_macro = 0.782 | Vad AUC = 0.883| Val F1_micro = 0.834 | Validation time: 15.6(s)
+|Epoch 024 | Train time: 18.6(s) | Train loss: 5.203| Val F1_macro = 0.755 | Vad AUC = 0.883| Val F1_micro = 0.831 | Validation time: 15.0(s)
+|Epoch 025 | Test F1_macro = 0.78795 | Testing time: 24.7(s)
+|Epoch 025 | Train time: 17.4(s) | Train loss: 5.005| Val F1_macro = 0.778 | Vad AUC = 0.883| Val F1_micro = 0.836 | Validation time: 15.1(s)
+|Epoch 026 | Train time: 19.0(s) | Train loss: 4.374| Val F1_macro = 0.772 | Vad AUC = 0.883| Val F1_micro = 0.838 | Validation time: 16.3(s)
+|Epoch 027 | Train time: 17.5(s) | Train loss: 3.965| Val F1_macro = 0.780 | Vad AUC = 0.882| Val F1_micro = 0.831 | Validation time: 17.0(s)
+|Epoch 028 | Train time: 18.5(s) | Train loss: 3.404| Val F1_macro = 0.786 | Vad AUC = 0.877| Val F1_micro = 0.836 | Validation time: 15.9(s)
+|Epoch 029 | Train time: 19.0(s) | Train loss: 3.244| Val F1_macro = 0.779 | Vad AUC = 0.878| Val F1_micro = 0.834 | Validation time: 16.4(s)
+|Epoch 030 | Test F1_macro = 0.79342 | Testing time: 31.5(s)
+|Epoch 030 | Train time: 19.2(s) | Train loss: 3.554| Val F1_macro = 0.790 | Vad AUC = 0.886| Val F1_micro = 0.829 | Validation time: 17.8(s)
+|Epoch 031 | Train time: 18.7(s) | Train loss: 3.222| Val F1_macro = 0.756 | Vad AUC = 0.881| Val F1_micro = 0.822 | Validation time: 16.6(s)
+|Epoch 032 | Train time: 21.1(s) | Train loss: 3.584| Val F1_macro = 0.762 | Vad AUC = 0.877| Val F1_micro = 0.822 | Validation time: 14.6(s)
+|Epoch 033 | Train time: 18.7(s) | Train loss: 3.987| Val F1_macro = 0.755 | Vad AUC = 0.879| Val F1_micro = 0.827 | Validation time: 15.5(s)
+Early Stopped due to no better performance in 11 epochs
+Closing tensorboard
+Best result: | vad F1_macro = 0.80645 | epoch = 22
+Best Vad F1_macro = 0.80645 | Best Vad AUC = 0.88902| Best Test F1_macro = 0.79334 | Best Test F1_micro = 0.82992 | Best Vad AUC = 0.90082 
+| Best Test Precision_True_class = 0.65844 | Best Test Recall_True_class = 0.76190 | Best Test F1_True_class = 0.70640 
+| Best Test Precision_False_class = 0.90724 | Best Test_Recall_False class = 0.85490 | Best Test F1_False_class = 0.88029 
+| Best Test Precision_Mixed_class = 0.00000 | Best Test_Recall_Mixed_class = 0.00000 | Best Test F1_Mixed_class = 0.00000 
+Total time for one fold:  4831 (seconds)

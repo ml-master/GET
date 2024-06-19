@@ -1,0 +1,164 @@
+============= FOLD 4 ========================
+{
+  "article_src_emb_size": 128,
+  "batch_size": 32,
+  "claim_src_emb_size": 128,
+  "cuda": 1,
+  "dataset": "PolitiFact",
+  "debug": 1,
+  "decay_step": 100,
+  "decay_weight": 0.0001,
+  "dropout_left": 0.2,
+  "dropout_right": 0.2,
+  "early_stopping": 10,
+  "epochs": 100,
+  "fixed_length_left": 30,
+  "fixed_length_left_src_chars": 20,
+  "fixed_length_right": 100,
+  "fixed_length_right_src_chars": 20,
+  "fixed_num_evidences": 30,
+  "gnn_dropout": 0.2,
+  "gnn_window_size": 3,
+  "gsl_rate": 0.6,
+  "hidden_size": 300,
+  "log": "logs/get",
+  "loss_type": "cross_entropy",
+  "lr": 0.0001,
+  "num_att_heads_for_evds": 1,
+  "num_att_heads_for_words": 3,
+  "num_classes": 2,
+  "num_folds": 5,
+  "optimizer": "adam",
+  "path": "formatted_data/declare/",
+  "secondary_log_folder": "logs/get/log_results_PolitiFact",
+  "seed": 123456,
+  "use_article_source": 1,
+  "use_claim_source": 1,
+  "verbose": 1,
+  "word_embedding_size": 300
+}
+Setting seed to 123456
+Min query length, 24 Min doc length 100
+Max query length, 25 Max doc length 100
+Converting DataFrame to Normal Dictionary of Data
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+Converting DataFrame to Normal Dictionary of Data
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+Converting DataFrame to Normal Dictionary of Data
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+[NOTICE] MatchZoo use queryID and docID as index in dataframe left and right, therefore, iterrows will return index which is left_id or right_id
+done extracting
+loading data time: 361 (seconds)
+Building model
+Word hit: (32051, 32053) 99.99376033444607
+Fitting Model
+Using: <function cross_entroy at 0x7fe61f0a48c0>
+|Epoch 000 | Train time: 23.2(s) | Train loss: 54.710| Val F1_macro = 0.666 | Vad AUC = 0.719| Val F1_micro = 0.671 | Validation time: 20.8(s)
+|Epoch 001 | Train time: 24.9(s) | Train loss: 51.049| Val F1_macro = 0.701 | Vad AUC = 0.737| Val F1_micro = 0.702 | Validation time: 21.5(s)
+|Epoch 002 | Train time: 26.4(s) | Train loss: 48.865| Val F1_macro = 0.676 | Vad AUC = 0.750| Val F1_micro = 0.688 | Validation time: 25.4(s)
+|Epoch 003 | Train time: 25.2(s) | Train loss: 46.163| Val F1_macro = 0.715 | Vad AUC = 0.768| Val F1_micro = 0.719 | Validation time: 22.7(s)
+|Epoch 004 | Train time: 27.5(s) | Train loss: 44.635| Val F1_macro = 0.635 | Vad AUC = 0.775| Val F1_micro = 0.669 | Validation time: 20.6(s)
+|Epoch 005 | Test F1_macro = 0.68222 | Testing time: 44.2(s)
+|Epoch 005 | Train time: 24.1(s) | Train loss: 43.683| Val F1_macro = 0.701 | Vad AUC = 0.789| Val F1_micro = 0.702 | Validation time: 24.4(s)
+|Epoch 006 | Train time: 22.9(s) | Train loss: 42.332| Val F1_macro = 0.708 | Vad AUC = 0.780| Val F1_micro = 0.708 | Validation time: 23.9(s)
+|Epoch 007 | Train time: 22.5(s) | Train loss: 40.508| Val F1_macro = 0.729 | Vad AUC = 0.782| Val F1_micro = 0.730 | Validation time: 24.0(s)
+|Epoch 008 | Train time: 23.6(s) | Train loss: 40.224| Val F1_macro = 0.729 | Vad AUC = 0.793| Val F1_micro = 0.733 | Validation time: 23.4(s)
+|Epoch 009 | Train time: 27.7(s) | Train loss: 38.394| Val F1_macro = 0.702 | Vad AUC = 0.793| Val F1_micro = 0.702 | Validation time: 23.2(s)
+|Epoch 010 | Test F1_macro = 0.69884 | Testing time: 40.3(s)
+|Epoch 010 | Train time: 26.1(s) | Train loss: 37.625| Val F1_macro = 0.741 | Vad AUC = 0.797| Val F1_micro = 0.744 | Validation time: 24.3(s)
+|Epoch 011 | Train time: 24.0(s) | Train loss: 34.934| Val F1_macro = 0.742 | Vad AUC = 0.789| Val F1_micro = 0.747 | Validation time: 22.3(s)
+|Epoch 012 | Train time: 25.8(s) | Train loss: 33.310| Val F1_macro = 0.739 | Vad AUC = 0.802| Val F1_micro = 0.739 | Validation time: 21.9(s)
+|Epoch 013 | Train time: 23.2(s) | Train loss: 32.740| Val F1_macro = 0.747 | Vad AUC = 0.796| Val F1_micro = 0.747 | Validation time: 21.8(s)
+|Epoch 014 | Train time: 27.5(s) | Train loss: 31.864| Val F1_macro = 0.730 | Vad AUC = 0.802| Val F1_micro = 0.730 | Validation time: 21.9(s)
+|Epoch 015 | Test F1_macro = 0.68535 | Testing time: 41.0(s)
+|Epoch 015 | Train time: 23.6(s) | Train loss: 30.583| Val F1_macro = 0.719 | Vad AUC = 0.793| Val F1_micro = 0.719 | Validation time: 22.9(s)
+|Epoch 016 | Train time: 24.7(s) | Train loss: 28.695| Val F1_macro = 0.736 | Vad AUC = 0.800| Val F1_micro = 0.747 | Validation time: 23.6(s)
+|Epoch 017 | Train time: 22.1(s) | Train loss: 26.910| Val F1_macro = 0.740 | Vad AUC = 0.801| Val F1_micro = 0.750 | Validation time: 20.6(s)
+|Epoch 018 | Train time: 25.9(s) | Train loss: 25.835| Val F1_macro = 0.729 | Vad AUC = 0.794| Val F1_micro = 0.739 | Validation time: 22.8(s)
+|Epoch 019 | Train time: 25.0(s) | Train loss: 24.889| Val F1_macro = 0.725 | Vad AUC = 0.787| Val F1_micro = 0.736 | Validation time: 22.6(s)
+|Epoch 020 | Test F1_macro = 0.69329 | Testing time: 43.2(s)
+|Epoch 020 | Train time: 21.5(s) | Train loss: 23.008| Val F1_macro = 0.736 | Vad AUC = 0.794| Val F1_micro = 0.742 | Validation time: 23.0(s)
+|Epoch 021 | Train time: 28.0(s) | Train loss: 21.061| Val F1_macro = 0.739 | Vad AUC = 0.794| Val F1_micro = 0.744 | Validation time: 23.5(s)
+|Epoch 022 | Train time: 23.6(s) | Train loss: 21.371| Val F1_macro = 0.741 | Vad AUC = 0.789| Val F1_micro = 0.744 | Validation time: 23.8(s)
+|Epoch 023 | Train time: 29.6(s) | Train loss: 19.751| Val F1_macro = 0.727 | Vad AUC = 0.774| Val F1_micro = 0.730 | Validation time: 23.4(s)
+|Epoch 024 | Train time: 22.4(s) | Train loss: 18.389| Val F1_macro = 0.738 | Vad AUC = 0.780| Val F1_micro = 0.742 | Validation time: 22.2(s)
+Early Stopped due to no better performance in 11 epochs
+Closing tensorboard
+Best result: | vad F1_macro = 0.74654 | epoch = 13
+Best Vad F1_macro = 0.74654 | Best Vad AUC = 0.79614| Best Test F1_macro = 0.69144 | Best Test F1_micro = 0.69159 | Best Vad AUC = 0.74591 
+| Best Test Precision_True_class = 0.71562 | Best Test Recall_True_class = 0.68155 | Best Test F1_True_class = 0.69817 
+| Best Test Precision_False_class = 0.66770 | Best Test_Recall_False class = 0.70261 | Best Test F1_False_class = 0.68471 
+| Best Test Precision_Mixed_class = 0.00000 | Best Test_Recall_Mixed_class = 0.00000 | Best Test F1_Mixed_class = 0.00000 
+Total time for one fold:  3256 (seconds)
+ModelName&\begin{tabular}[c]{@{}l@{}} 0.75111 \\$\pm$ 0.00452 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.69007 \\$\pm$ 0.00209 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.69365 \\$\pm$ 0.00299 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.71888 \\$\pm$ 0.01610 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.69210 \\$\pm$ 0.01675 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.75137 \\$\pm$ 0.05361 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.66127 \\$\pm$ 0.01765 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.70118 \\$\pm$ 0.02748 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.63027 \\$\pm$ 0.05427 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.00000 \\$\pm$ 0.00000 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.00000 \\$\pm$ 0.00000 \end{tabular}&\begin{tabular}[c]{@{}l@{}} 0.00000 \\$\pm$ 0.00000 \end{tabular}
+Average results from 5 folds
+{
+  "auc": {
+    "all_5_folds": "0.7512444543249017 0.7563900560224088 0.7461581854964208 0.7558648459383753 0.7459053065670713",
+    "avg": 0.7511125696698355,
+    "std": 0.004519179063846843
+  },
+  "f1": {
+    "all_5_folds": "0.7025411061285501 0.7327001356852103 0.7221438645980254 0.7388362652232748 0.698170731707317",
+    "avg": 0.7188784206684755,
+    "std": 0.016098041606499476
+  },
+  "f1_false_cls": {
+    "all_5_folds": "0.678513731825525 0.6398537477148081 0.6573913043478261 0.6458715596330276 0.6847133757961783",
+    "avg": 0.661268743863473,
+    "std": 0.017650780468537106
+  },
+  "f1_macro": {
+    "all_5_folds": "0.6905274189770376 0.6862769417000092 0.6897675844729257 0.6923539124281513 0.6914420537517476",
+    "avg": 0.6900735822659743,
+    "std": 0.0020874243388779292
+  },
+  "f1_micro": {
+    "all_5_folds": "0.6909937888198758 0.6931464174454829 0.6931464174454829 0.6993769470404985 0.6915887850467289",
+    "avg": 0.6936504711596138,
+    "std": 0.0029869441571663178
+  },
+  "f1_mixed_cls": {
+    "all_5_folds": "0.0 0.0 0.0 0.0 0.0",
+    "avg": 0.0,
+    "std": 0.0
+  },
+  "f1_true_cls": {
+    "all_5_folds": "0.7025411061285501 0.7327001356852103 0.7221438645980254 0.7388362652232748 0.698170731707317",
+    "avg": 0.7188784206684755,
+    "std": 0.016098041606499476
+  },
+  "precision_false_cls": {
+    "all_5_folds": "0.6730769230769231 0.7261410788381742 0.7026022304832714 0.7364016736401674 0.6677018633540373",
+    "avg": 0.7011847538785146,
+    "std": 0.02748167732566877
+  },
+  "precision_mixed_cls": {
+    "all_5_folds": "0.0 0.0 0.0 0.0 0.0",
+    "avg": 0.0,
+    "std": 0.0
+  },
+  "precision_true_cls": {
+    "all_5_folds": "0.7078313253012049 0.6733167082294265 0.6863270777479893 0.6774193548387096 0.715625",
+    "avg": 0.692103893223466,
+    "std": 0.016748493474723958
+  },
+  "recall_false_cls": {
+    "all_5_folds": "0.6840390879478827 0.5718954248366013 0.6176470588235294 0.5751633986928104 0.7026143790849673",
+    "avg": 0.6302718698771583,
+    "std": 0.05427428703085074
+  },
+  "recall_mixed_cls": {
+    "all_5_folds": "0.0 0.0 0.0 0.0 0.0",
+    "avg": 0.0,
+    "std": 0.0
+  },
+  "recall_true_cls": {
+    "all_5_folds": "0.6973293768545994 0.8035714285714286 0.7619047619047619 0.8125 0.6815476190476191",
+    "avg": 0.7513706372756818,
+    "std": 0.05360671801753956
+  }
+}
+Total time:  15548 (seconds)
