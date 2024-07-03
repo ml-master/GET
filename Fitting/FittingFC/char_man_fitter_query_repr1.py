@@ -405,6 +405,9 @@ class CharManFitterQueryRepr1(MultiLevelAttentionCompositeFitter):
             if self.output_size == 3 else 0.0
         f1_mixed_class = f1_score(true_labels, predicted_labels, labels=[2], average=None)[0] \
             if self.output_size == 3 else 0.0
+        
+        acc_t = self._pre_true(true_labels,predicted_labels)/sum(true_labels)
+        acc_f = self._pre_false(true_labels,predicted_labels)/(len(true_labels)-sum(true_labels))
 
         results[KeyWordSettings.AUC_metric] = auc
         results[KeyWordSettings.F1_macro] = f1_macro
@@ -423,7 +426,27 @@ class CharManFitterQueryRepr1(MultiLevelAttentionCompositeFitter):
         results[KeyWordSettings.RecallMixedCls] = recall_mixed_class
         results[KeyWordSettings.F1MixedCls] = f1_mixed_class
 
+        results[KeyWordSettings.Acc_t] = acc_t
+        results[KeyWordSettings.Acc_f] = acc_f
+        print("Acc_t:"+str(acc_t))
+        print("Acc_f:"+str(acc_f))
+
+
         return results
+    
+    def _pre_true(self, l1, l2):
+        pre_t = 0
+        for i in tqdm(range(len(l1))):
+            if int(l1[i])==int(l2[i]) and int(l1[i]) == 1:
+                pre_t += 1
+        return pre_t
+    
+    def _pre_false(self, l1, l2):
+        pre_f = 0
+        for i in tqdm(range(len(l1))):
+            if int(l1[i])==int(l2[i]) and int(l1[i]) == 0:
+                pre_f += 1
+        return pre_f
 
     def _prepare_error_analysis(self, testRatings: interactions.ClassificationInteractions,
                                 query: int, evd_ids: List[int], probs: float, labels: List[int], **kargs):
