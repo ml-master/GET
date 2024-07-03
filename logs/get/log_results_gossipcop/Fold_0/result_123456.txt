@@ -191,6 +191,8 @@ Using: <function cross_entroy at 0x7fc1272148c0>
 Early Stopped due to no better performance in 11 epochs
 Closing tensorboard
 Best result: | vad F1_macro = 0.65874 | epoch = 20
+Acc_t:0.7108177172061328
+Acc_f:0.6157148990983254
 Best Vad F1_macro = 0.65874 | Best Vad AUC = 0.71315| Best Test F1_macro = 0.66261 | Best Test F1_micro = 0.66346 | Best Vad AUC = 0.71152 
 | Best Test Precision_True_class = 0.65094 | Best Test Recall_True_class = 0.71082 | Best Test F1_True_class = 0.67956 
 | Best Test Precision_False_class = 0.67866 | Best Test_Recall_False class = 0.61571 | Best Test F1_False_class = 0.64566 
